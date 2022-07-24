@@ -1,0 +1,11 @@
+roslaunch uvd gazebo.launch
+
+roslaunch uvd room_amcl.launch map_file:=$HOME/catkin_ws/src/disinfectant/uvd/maps/test.yaml
+
+rosrun ros_waypoint_generator ros_waypoint_generator
+
+rosrun ros_waypoint_generator ros_waypoint_saver
+
+cd ~/catkin_ws/src/disinfectant/uvd/maps
+
+rosrun uvd feed.py
